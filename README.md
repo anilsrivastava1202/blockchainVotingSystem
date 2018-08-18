@@ -57,3 +57,4 @@ Interacting with contract via front GUI
 1. Update the contract instance address in index.js
   * Can run command ```contractInstance.address``` to find address
 2. Open index.html in your browser
+![Voting Application](VotingApplication.png)
