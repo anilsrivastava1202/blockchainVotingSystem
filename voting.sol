@@ -1,7 +1,7 @@
 // version of compiler this code will compile with
 pragma solidity ^0.4.18;
 
-contract voting {
+contract Voting {
 
   mapping (bytes32 => uint8) public votesReceived;
 
@@ -12,7 +12,7 @@ contract voting {
   bytes32[] public candidateList;
 
   //This is the constructor and is called once you deploy the contract
-  function voting(bytes32[] candidateNames) public {
+  constructor(bytes32[] candidateNames) public {
     candidateList = candidateNames;
   }
 

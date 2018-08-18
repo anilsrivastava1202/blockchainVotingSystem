@@ -12,7 +12,11 @@ Install Dependencies:
 Directions:
 1. Git Clone this repository
 2. Run ganache-cli ```node_modules/.bin/ganace-cli```
-3. Open up Nodejs console ```node```
+3. In new terminal open up Nodejs console ```node``` and initialize web3 object
+```
+ Web3 = require('web3')
+ web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+```
 4. Compile the contract
   ```
   code = fs.readFileSync('Voting.sol').toString()
@@ -24,7 +28,7 @@ Directions:
   ```
   abiDefinition = JSON.parse(compiledCode.contracts[':Voting'].interface)
   VotingContract = web3.eth.contract(abiDefinition)
-  byteCode = compiledCode.contracts[':voting'].bytecode
+  byteCode = compiledCode.contracts[':Voting'].bytecode
   deployedContract = VotingContract.new(['Ankur','Gaurav','Hemant'],{data: byteCode, from: web3.eth.accounts[0], gas: 4700000})
   contractInstance = VotingContract.at(deployedContract.address)
   ```
@@ -34,16 +38,16 @@ Directions:
 Interacting with contract through nodejs console
 ```
 > contractInstance.totalVotesFor.call('Ankur')
-Output: { [String: '0'] s: 1, e: 0, c: [ 0 ] }
+Output: BigNumber { s: 1, e: 0, c: [ 4 ] }
 
 > contractInstance.voteForCandidate('Ankur', {from: web3.eth.accounts[0]})
-Output: '0x5aad33103dc8099925f707dd9b58613cff8e54de13fe445ec610ae3aa5be88ff'
+Output: '0x08ea2f904072c6a5012fa5bc65d7f652932edba45c69b38ea805dc4a8156549e'
 
 > contractInstance.voteForCandidate('Gaurav', {from: web3.eth.accounts[0]})
-Output: '0x04a281f8a61621ac8ad5b5d3ee185c189e20304c39323d61bca4fa98419ef292'
+Output: '0xb818b809d7e1131ffd9fa2023c6dc190c97587c95d6c290c88e814e51c3f9026'
 
 > contractInstance.voteForCandidate('Hemant', {from: web3.eth.accounts[0]})
-Output:  '0xcbbd77573fac176fe4f2dcadbfa27f5df6556bd3603a98aa687316fe452e0c7a'
+Output:  '0x23a0d608b07a4ee444741088962072608029a6a6c9f71dca549e5c6c65cda9a8'
 
 > contractInstance.totalVotesFor.call('Ankur').toLocaleString()
 Output: '1'
