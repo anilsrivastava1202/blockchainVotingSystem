@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting Application</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="./index.js"></script>
+</head>
+<body class="container">
+  <h1>A Simple Blockchain Voting Application</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Candidate</th>
+          <th>Votes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ankur</td>
+          <td id="candidate-1"></td>
+        </tr>
+        <tr>
+          <td>Gaurav</td>
+          <td id="candidate-2"></td>
+        </tr>
+        <tr>
+          <td>Hemant</td>
+          <td id="candidate-3"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <select id="candidate">
+    <option value="Ankur">Ankur</option>
+    <option value="Gaurav">Gaurav</option>
+    <option value="Hemant">Hemant</option>
+  </select>
+  <a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
+</body>
+</html>
