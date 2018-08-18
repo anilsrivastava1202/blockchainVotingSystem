@@ -15,10 +15,10 @@ function voteForCandidate() {
 }
 
 $(document).ready(function() {
-  candidateNames = Object.keys(candidate);
+  let candidateNames = ["Ankur", "Gaurav", "Hemant"];
   for (var i = 0; i < candidateNames.length; i++) {
     let name = candidateNames[i];
-    let val = contractInstance.totalVotesFor.call(candidate).toString()
+    let val = contractInstance.totalVotesFor.call(name).toString()
     $("#" + candidates[name]).html(val);
   }
 });
