@@ -58,3 +58,6 @@ Interacting with contract via front GUI
   * Can run command ```contractInstance.address``` to find address
 2. Open index.html in your browser
 ![Voting Application](VotingApplication.png)
+
+``` \\ ```
+```\```
