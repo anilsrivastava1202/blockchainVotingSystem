@@ -59,5 +59,8 @@ Interacting with contract via front GUI
 2. Open index.html in your browser
 ![Voting Application](VotingApplication.png)
 
-``` \\ ```
-```\```
+``` 
+{
+  "errorMessage": "SSH Key file name should not contain [\\, ;, %, ?, :]"
+}
+```
